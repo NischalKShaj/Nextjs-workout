@@ -1,19 +1,20 @@
 // file to show the layouts
 
-import React from "react";
-
 const DashboardLayouts = ({
   children,
   notification,
   users,
   revenue,
+  login,
 }: {
   children: React.ReactNode;
   notification: React.ReactNode;
   users: React.ReactNode;
   revenue: React.ReactNode;
+  login: React.ReactNode;
 }) => {
-  return (
+  const isLogin = true;
+  return isLogin ? (
     <div>
       <div>{children}</div>
       <div style={{ display: "flex" }}>
@@ -24,6 +25,8 @@ const DashboardLayouts = ({
         <div style={{ display: "flex", flex: 1 }}>{notification}</div>
       </div>
     </div>
+  ) : (
+    <div>{login}</div>
   );
 };
 
